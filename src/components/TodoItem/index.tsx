@@ -41,32 +41,27 @@ export const TodoItem = (props: TodoItemProps) => {
   };
 
   return (
-    <div className="flex items-center border-b border-indigo-500 py-2">
+    <div className="flex items-center py-1">
       <input
         type="text"
         value={item.text}
         onChange={editItemText}
-        className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-        placeholder="Jane Doe"
+        className="appearance-none bg-transparent w-8/12 text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none border-b border-indigo-500"
         aria-label="Full name"
       />
-      <label
-        onChange={toggleItemCompletion}
-        htmlFor="complete-toggle"
-        className="flex text-gray-500 font-bold"
+      <button
+        type="button"
+        onClick={toggleItemCompletion}
+        className="mr-2 border border-indigo-500 text-indigo-500 transition duration-500
+        ease select-none hover:text-white hover:bg-indigo-600 focus:outline-none focus:shadow-outline text-sm py-1 px-2 rounded w-2/12"
       >
-        <input
-          id="complete-toggle"
-          className="mr-2 leading-tight"
-          type="checkbox"
-          checked={item.isComplete}
-        />
-        <span className="text-sm">Mark complete</span>
-      </label>
+        Complete
+      </button>
       <button
         type="button"
         onClick={deleteItem}
-        className="flex-shrink-0 border-transparent border-4 text-indigo-500 hover:text-indigo-800 text-sm py-1 px-2 rounded"
+        className="border border-indigo-500 text-indigo-500 transition duration-500
+        ease select-none hover:text-white hover:bg-indigo-600 focus:outline-none focus:shadow-outline text-sm py-1 px-2 rounded w-2/12"
       >
         Delete
       </button>
